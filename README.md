@@ -53,6 +53,25 @@ El historial y los indicadores iniciales usan datos guardados: se recorren todas
 - IDs de idempotencia conservados al reintentar; servidor autoritativo para límites/tiempo/estado.
 - No asumir que cerrar una app notifica al servidor ni que un fallo HTTP significa que el mensaje no fue guardado.
 
+## Despliegue web en Vercel
+
+Vercel debe construir el proyecto como sitio estático:
+
+- Framework preset: **Other**
+- Build command: `npm run build:web`
+- Output directory: `dist`
+- Install command: `npm ci`
+
+La configuración `vercel.json` fija esas opciones y evita un despliegue como aplicación Node o archivo binario.
+
+En **Environment Variables** define:
+
+```text
+EXPO_PUBLIC_API_URL=https://TU-BACKEND.onrender.com/api/v1
+```
+
+Redespliega después de cambiar la URL. Esta variable es pública y debe apuntar al backend; nunca contenga `DATABASE_URL`, `JWT_ACCESS_SECRET` ni otra credencial.
+
 ## Estructura actual
 
 ```text

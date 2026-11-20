@@ -15,7 +15,19 @@ export interface User {
 interface Tokens { accessToken: string; expiresIn: number; refreshToken?: string }
 
 const web = Platform.OS === "web";
-const base = (process.env.EXPO_PUBLIC_API_URL ?? (web ? "http://localhost:3000/api/v1" : "http://10.0.2.2:3000/api/v1")).replace(/\/$/, "");
+const configuredBase = process.env.EXPO_PUBLIC_API_URL ?? (web ? "http://127.0.0.1:3000/api/v1" : "http://10.0.2.2:3000/api/v1");
+const base = (() => {
+  const value = configuredBase.replace(/\/$/, "");
+  try {
+    const url = new URL(value);
+    if (url.pathname === "" || url.pathname === "/") url.pathname = "/api/v1";
+    url.hash = "";
+    url.search = "";
+    return url.toString().replace(/\/$/, "");
+  } catch {
+    return value;
+  }
+})();
 const http = createHttpClient({ baseUrl: base, web });
 const refreshKey = "neurotalk.refresh";
 let accessToken: string | undefined;

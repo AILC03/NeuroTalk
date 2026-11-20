@@ -1,0 +1,20 @@
+// Imports selectivos: Metro no necesita incorporar el catálogo completo de Lucide.
+export { default as ArrowLeft } from "lucide-react-native/icons/arrow-left";
+export { default as ArrowRight } from "lucide-react-native/icons/arrow-right";
+export { default as BriefcaseBusiness } from "lucide-react-native/icons/briefcase-business";
+export { default as GraduationCap } from "lucide-react-native/icons/graduation-cap";
+export { default as House } from "lucide-react-native/icons/house";
+export { default as Sparkles } from "lucide-react-native/icons/sparkles";
+export { default as ChartColumn } from "lucide-react-native/icons/chart-column";
+export { default as MessageCircle } from "lucide-react-native/icons/message-circle";
+export { default as UserRound } from "lucide-react-native/icons/user-round";
+export { default as ChevronRight } from "lucide-react-native/icons/chevron-right";
+export { default as Trash2 } from "lucide-react-native/icons/trash";
+export { default as MessageSquareText } from "lucide-react-native/icons/message-square-text";
+export { default as Search } from "lucide-react-native/icons/search";
+export { default as Circle } from "lucide-react-native/icons/circle";
+export { default as CircleDot } from "lucide-react-native/icons/circle-dot";
+export { default as Check } from "lucide-react-native/icons/check";
+export { default as LockKeyhole } from "lucide-react-native/icons/lock-keyhole";
+export { default as Pause } from "lucide-react-native/icons/pause";
+export { default as SendHorizontal } from "lucide-react-native/icons/send-horizontal";
